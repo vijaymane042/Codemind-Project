@@ -75,8 +75,10 @@ public class HomePage {
 			return RegisterLink;
 		}
 
+		
 		public void setRegisterLink() {
 			RegisterLink = driver.findElement(By.linkText("REGISTER"));
+			System.out.println("hi");
 		}
 		
 		
