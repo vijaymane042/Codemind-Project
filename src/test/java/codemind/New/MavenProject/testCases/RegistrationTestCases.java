@@ -1,7 +1,7 @@
 //01112022
 
 
-package codemind.New.MavenProject.pages;
+package codemind.New.MavenProject.testCases;
 
 import org.testng.annotations.AfterMethod;
 import static org.testng.Assert.assertTrue;
@@ -21,6 +21,8 @@ import org.testng.annotations.Test;
 import codemind.New.MavenProject.TestNGListners;
 import codemind.New.MavenProject.UtilityMethods;
 //@Listeners(TestNGListners.class)
+import codemind.New.MavenProject.pages.HomePage;
+import codemind.New.MavenProject.pages.RegistrationPage;
 
 
 public class RegistrationTestCases {

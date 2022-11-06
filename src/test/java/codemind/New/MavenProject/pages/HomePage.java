@@ -37,6 +37,18 @@ public class HomePage {
 		public void setpassword() {
 			password = driver.findElement(By.xpath("//input[@name='password']"));
 		}
+		
+		
+		//OR
+	/*	public WebElement getPassword() {
+			password = driver.findElement(By.xpath("//input[@name='password']"));
+			return password;
+		}*/
+		
+
+//		public void setPassword() {
+//			
+//		}
 
 		public WebElement getloginButton () {
 	    return loginButton ;

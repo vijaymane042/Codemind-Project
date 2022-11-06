@@ -10,11 +10,11 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import TestNG.LoginScenarioWithListners;
 
-public class TestNGListner {
+
+public class TestNGListners implements ITestListener {
 	
-	public class TestNGListners implements ITestListener {                //ItestListner -kind of listner shows result of latest test case
+              //ItestListner -kind of listner shows result of latest test case
 
 		@Override
 		public void onTestStart(ITestResult result) {
@@ -30,7 +30,7 @@ public class TestNGListner {
 
 		@Override
 		//public void onTestFailure(ITestResult result,WebDriver driver {
-		public void onTestFailure(ITestResult result {
+		public void onTestFailure(ITestResult result ){
 
 //			if (result.getStatus() == result.FAILURE) {
 //				try {
@@ -43,7 +43,7 @@ public class TestNGListner {
 //				Reporter.log("Tests Case failed " + result.getName());
 //				//UtilityMethods.getScreenshot
 			}
-		}
+		
 
 		@Override
 		public void onTestSkipped(ITestResult result) {
@@ -72,4 +72,4 @@ public class TestNGListner {
 	}
 
 
-}
+

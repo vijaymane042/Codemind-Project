@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.checkerframework.checker.units.qual.Current;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,6 +25,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UtilityMethods {
 
+	static WebDriver driver;
 	public static String getProperty(String key) throws IOException, FileNotFoundException {
 		Properties properties = new Properties();
 		try
@@ -50,7 +52,8 @@ public static void scrollTillEndOfThePage(WebDriver driver)
 	}
 		
 	
-public static void takeScreenShot (WebDriver driver) 
+public static void takeScreenShot (WebDriver driver) {
+	
 		try
 		{
 		TakesScreenshot takesScreenshot = (TakesScreenshot)driver;
@@ -68,19 +71,18 @@ public static void takeScreenShot (WebDriver driver)
 		select.selectByVisibleText(dropDownOption);
 		
 }
-		public void waitForPageTitle() {
-			WebDriver driver;
+		public static void waitForPageTitle(WebDriver driver,int duration, String title) {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(0));
 			wait.until(ExpectedConditions.titleContains(null));
 		}
 		
 		//02112022
-		public static void getScreenShot(String name,WebDriver driver )throws IOException{
-			TakesScreenshot takeScreenshot=(TakesScreenshot)driver ;
+		public static void getScreenShot(String name,WebDriver driver)throws IOException{
+			TakesScreenshot takeScreenshot=(TakesScreenshot)driver;
 			File file=takeScreenshot.getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(file, new File("D:\\Vijay\\Selenium setup\\Screenshot\\"+name+".png"));
-			FileUtils.copyFile(file, new File("C:\\Users\\vijay\\eclipse-workspace\\CodemindSelniumProject\\ScreenShot"+name+".png"));        //ScreenShotfolder<properties<copy path
-
+		//	FileUtils.copyFile(file, new File("D:\\Vijay\\Selenium setup\\Screenshot\\"+name+".png"));
+		//	FileUtils.copyFile(file, new File("C:\\Users\\vijay\\eclipse-workspace\\CodemindSelniumProject\\ScreenShot"+name+".png"));        //ScreenShotfolder<properties<copy path
+FileUtils.copyFile(file, new File("Screenshot"+name+System.currentTimeMillis()+"png"));
 		}
 		
 
